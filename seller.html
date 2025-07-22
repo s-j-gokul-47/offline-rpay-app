@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller - R-Token Pay</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <h1>R-Token Pay <small>(Seller)</small></h1>
+
+    <div class="card">
+      <button onclick="generateSellerQR()">Generate Payment QR</button>
+      <div id="seller-qr"></div>
+      <p id="pin-display"></p>
+    </div>
+
+    <div class="card">
+      <h3>Pending Sync: <span id="pending-tx">0</span></h3>
+      <button onclick="syncTransactions()">Manual Sync</button>
+    </div>
+
+    <a href="index.html" class="btn back-btn">Back to Home</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

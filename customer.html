@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer - R-Token Pay</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <h1>R-Token Pay <small>(Customer)</small></h1>
+    
+    <div class="card">
+      <h3>Your R-Tokens: <span id="r-tokens">0</span></h3>
+      <button onclick="loadRTokens(500)">Load ₹500</button>
+      <button onclick="loadRTokens(1000)">Load ₹1000</button>
+    </div>
+
+    <div class="card">
+      <h3>Pay Offline</h3>
+      <button onclick="startScanner()">Scan Seller's QR</button>
+      <div id="scan-result"></div>
+    </div>
+
+    <a href="index.html" class="btn back-btn">Back to Home</a>
+  </div>
+
+  <!-- QR Scanner Modal -->
+  <div id="scanner-modal" class="modal">
+    <div class="modal-content">
+      <h3>Scan QR Code</h3>
+      <div id="scanner-container"></div>
+      <button onclick="stopScanner()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
